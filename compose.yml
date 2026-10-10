@@ -6,6 +6,8 @@ services:
       replicas: 3
     ports:
       - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
     networks:
       - mynetwork
 
@@ -58,3 +60,5 @@ services:
 networks:
   mynetwork:
     driver: overlay
+volumes:
+  db-data:
