@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: shaikmustafa/arshad:db
+    image: arkotta27/python-code-library-db:v${BUILD_NUMBER}
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: shaikmustafa/arshad:auth
+    image: arkotta27/python-code-library-auth:v${BUILD_NUMBER}
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: shaikmustafa/arshad:book
+    image: arkotta27/python-code-library-book:v${BUILD_NUMBER}
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: shaikmustafa/arshad:borrow
+    image: arkotta27/python-code-library-borrow:v${BUILD_NUMBER}
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: shaikmustafa/arshad:frontend
+    image: arkotta27/python-code-library-app:v${BUILD_NUMBER}
     deploy:
       replicas: 1
     ports:
