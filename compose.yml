@@ -57,4 +57,4 @@ services:
 
 networks:
   mynetwork:
-    driver: bridge
+    driver: overlay
